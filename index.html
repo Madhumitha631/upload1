@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitables</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .btn img {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+ 
+        .btn:hover img {
+            transform: scale(1.05);
+            opacity: 0.8;
+            /* background-color: orange; */
+        }
+
+        .btn-success:hover {
+            background-color: orange;
+            border-color: yellowgreen;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #ffc107;
+            color: #000;
+        }
+
+        nav { 
+            margin: 10px 0;
+        }
+
+    
+       
+     .navbar-nav li 
+     {
+            margin: 0 20px;
+        }
+
+        form {
+            position: relative;
+            display: inline-block;
+        }
+
+        input[type="search"] {
+            padding: 10px;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+ 
+        button {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: rgb(114, 168, 6);
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+
+        .a:hover {
+            background-color: #09e038;
+        }
+
+        .discount {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: orange;
+            color: white;
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .p {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgb(74, 107, 23);
+            color: white;
+            padding: 3%;
+            font-size: 16px;
+            border-radius: 5px;
+            z-index: 1;
+        }
+
+        .img-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.1);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-section {
+            display: flex;
+            justify-content: space-around;
+            padding: 0%;
+            margin: 1%;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        /*  */
+        .add-to-cart-btn:hover {
+            background-color: #ffc107;
+            color: white;
+
+        }
+
+        .product-title:hover {
+            color: #271c0b;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+
+<!-- Navbar -->
+
+<div class="container-fluid p-0">
+    <!-- Top Bar -->
+    <div class="container d-none d-lg-block py-2"
+        style="border-bottom-right-radius: 35px; border-top-left-radius: 35px; background-color: #81c408;">
+        <div class="d-flex justify-content-between">
+            <div class="top-info ps-2">
+                <small class="me-3">
+                    <i class="fas fa-map-marker-alt me-2 text-warning"></i>
+                    <a href="#" class="text-white text-decoration-none">
+                        <img src="img/location-dot-solid (1).jpg.svg" alt="" height="16px" width="20px">123 Street,
+                        New York
+                    </a>
+                </small>
+                <small class="me-3">
+                    <i class="fas fa-envelope me-2 text-warning"></i>
+                    <a href="#" class="text-white text-decoration-none">
+                        <img src="img/envelope-solid.svg" alt="" height="16px" width="20px">Email@Example.com
+                    </a>
+                </small>
+            </div>
+            <div class="top-link pe-2">
+                <a href="#" class="text-white text-decoration-none">
+                    <small class="text-white mx-2">Privacy Policy</small>/
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <small class="text-white mx-2">Terms of Use</small> /
+                </a>
+                <a href="#" class="text-white text-decoration-none">
+                    <small class="text-white ms-2">Sales and Refunds</small>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top ">
+        <div class="container ">
+            <!-- Brand logo with a responsive font size -->
+            <a class="navbar-brand" href="#" style="color: #81c408; font-size: 2.5rem; font-family: Georgia, 'Times New Roman', Times, serif;">Fruitables</a>
+
+            <!-- Toggler for mobile view -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Collapsible menu -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" style="color: #81c408;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop Detail</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Cart</a></li>
+                            <li><a class="dropdown-item" href="#">Checkout</a></li>
+                            <li><a class="dropdown-item" href="#">Testimonial</a></li>
+                            <li><a class="dropdown-item" href="#">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Right-side icons -->
+                <div class="d-flex align-items-center">
+                    <!-- Search icon -->
+                    <button class="btn btn-outline-warning me-3" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <img src="project3/icons8-search-50.png" alt="Search" height="20px" width="25px">
+                    </button>
+
+                    <!-- Shopping cart with a badge for items count -->
+                    <a href="#" class="position-relative me-4">
+                        <img src="project3/icons8-bag-30.png" alt="Shopping Cart" height="25px" width="20px">
+                        <span class="position-absolute bg-warning rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -4px; left: 10px; height: 20px; min-width: 18px;">1</span>
+                    </a>
+
+                    <!-- User profile icon -->
+                    <a href="#" class="my-auto">
+                        <img src="project3/icons8-contact-50.png" alt="User Profile" height="25px" width="25px">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    
+    
+    
+<div class="container-fluid py-5 mb-5 hero-header">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center" id="hero">
+            <div class="col-md-12 col-lg-7">
+                <h4 class="mb-3 ">100% Organic Foods</h4>
+                <h1 class="mb-5 display-3">Organic Veggies &amp; Fruits Foods</h1>
+                <div class="position-relative mx-auto">
+                    <input class="form-control border-2 border-warning w-75 py-3 px-4 rounded-pill" type="number"
+                        placeholder="Search">
+                    <button type="submit"
+                        class="btn btn-primary border-2 border-warning py-3 px-4 position-absolute rounded-pill text-white h-100"
+                        style="top: 0; right: 25%; background-color: #81c408;">Submit Now</button>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-5">
+                <div id="carouselId" class="carousel slide position-relative" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item rounded active">
+                            <img src="project3/hero-img-1.png" class="img-fluid w-100 h-100 bg-secondary rounded"
+                                alt="First slide">
+                            <a href="#"
+                                class="btn px-4 py-2 text-white rounded position-absolute top-50 start-50 translate-middle bg-warning">Fruits</a>
+                        </div>
+                        <div class="carousel-item rounded">
+                            <img src="project3/hero-img-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Second slide">
+                            <a href="#"
+                                class="btn px-4 py-2 text-white rounded position-absolute top-50 start-50 translate-middle bg-warning">Vegetables</a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> 
+    <div style="padding: 10%; margin: 0%;">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <center>
+                        <img src="project3/icons8-car-50.png" width="45%" height="60%" alt="Product 1"
+                            class="bg-warning rounded-pill text-center px-8 py-8"
+                            style="padding: 10%; margin: 10%;"><br>
+                        <h5 class="text-muted">Free Shipping</h5>
+                        <p>Free on order over $300</p>
+                    </center>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <center>
+                        <img src="project3/icons8-security-shield-50.png" width="45%" height="60%" alt="Product 1"
+                            class="bg-warning rounded-pill text-center px-8 py-8"
+                            style="padding: 10%; margin: 10%;"><br>
+                        <h5 class="text-muted">Security Payment</h5>
+                        <p>100% security payment</p>
+                    </center>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <center>
+                        <img src="project3/icons8-return-48.png" width="45%" height="60%" alt="Product 1"
+                            class="bg-warning rounded-pill text-center px-8 py-8"
+                            style="padding: 10%; margin: 10%;"><br>
+                        <h5 class="text-muted">30 Day Return</h5>
+                        <p>30 day money guarantee</p>
+                    </center>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card bg-light">
+                    <center>
+                        <img src="project3/icons8-call-50.png" width="45%" height="60%" alt="Product 1"
+                            class="bg-warning rounded-pill text-center px-8 py-8"
+                            style="padding: 10%; margin: 10%;"><br>
+                        <h5 class="text-muted">24/7 Support</h5>
+                        <p>Support every time fast0</p>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <br><br>
+        
+            <div class="container">
+                <a class="navbar-brand" href="#" style="color:rgb(55, 83, 55); padding: 0%" >
+                    <h3><b>Our Organic Products</b></h3>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center " id="navbarNav ">
+                    <ul class="navbar-nav" style="padding: 5%;">
+                        <li class="nav-item ">
+                            <a class="nav-link bg-warning rounded-pill text-white px-4 py-2" href="index.html">
+                                <h6>All Products</h6>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-light rounded-pill text-block px-4 py-2" href="index.html">
+                                <h6>Vegetables</h6>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-light rounded-pill text-block px-4 py-2" href="login.html">
+                                <h6>Fruits</h6>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-light rounded-pill text-block px-4 py-2" href="login.html">
+                                <h6>Bread </h6>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bg-light rounded-pill text-block px-4 py-2" href="login.html">
+                                <h6>Meat</h6>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        <!--  -->
+        <!--  -->
+        <div class="container">
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-1.jpg" class="card-img-top img-hover" alt="Grapes">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-muted">Grapes</h4>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="10%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-2.jpg" class="card-img-top img-hover" alt="Product 2">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-muted">Grapes</h4>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                                    </a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div> 
+                    <br>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-3.jpg" class="card-img-top img-hover" alt="Product 3">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-muted">Raspberries</h4>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-4.jpg" class="card-img-top img-hover" alt="Product 4">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-muted">Apricots</h4>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet consectetur 
+                                eiusmod te incididunt</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <!-- card 1 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-4.jpg" class="card-img-top img-hover" alt="Grapes">
+                        <div class="card-body text-center">
+                            <center>
+                                <h4 class="card-title text-muted">Banana</h4>
+                            </center>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <!-- card 2 -->
+                <div class="col-md-3">
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-5.jpg" class="card-img-top img-hover" alt="Grapes">
+                        <div class="card-body text-center">
+                            <center>
+                                <h4 class="card-title text-muted">Oranges</h4>
+                            </center>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <!-- card 3 -->
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-6.jpg" class="card-img-top img-hover" alt="Product 3">
+                        <div class="card-body text-center">
+                            <center>
+                                <h4 class="card-title text-muted">Raspberries</h4>
+                            </center>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur
+                                eiusmod te incididunt.</p>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn">
+                                        <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <!-- card 4 -->
+                    <div class="card border-warning card-hover">
+                        <div class="discount">Fruits</div>
+                        <img src="project3/fruite-item-2.jpg" class="card-img-top img-hover" alt="Product 4">
+                        <div class="card-body text-center">
+                            <center>
+                                <h4 class="card-title text-muted">Apricots</h4>
+                            </center>
+                            <p style="font-size: 110%;">Lorem ipsum dolor sit amet consectetur
+                                eiusmod te incididunt</p>
+                            </center>
+                            <div class="d-flex align-items-center" style="margin: 5%; padding: 5%;">
+                                <span>
+                                    <h5 class="text-muted">$4.99 / kg</h5>
+                                    <a href=""
+                                        class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn">
+                                        <img src="project3/icons8-bag-30.png"" width="20%" height="20%" style="margin-bottom: 10px;">Add to
+                                        Cart</a>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!--  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card bg-success rounded">
+                    <img src="project3/featur-1.jpg" class="card-img-top" alt="Product 2">
+                    <div class="discount bg-success " style="text-align: center; top: 60%;left: 28%; padding: 5%;">
+                        <h5 class="text-white">Fresh Apples</h5>
+                        <h3 class="text-muted">20% OFF</h3>
+                    </div>
+                    <div class="card-body text-center bg-warning" style="padding: 15%;">
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-muted rounded">
+                    <img src="project3/featur-2.jpg" class="card-img-top" alt="Product 2">
+                    <div class="discount bg-light " style="text-align: center; top: 60%;left: 25%;padding: 5%;">
+                        <h5 class="text-success">Tasty Fruits</h5>
+                        <h3 class="text-muted">Free delivery</h3>
+                    </div>
+                    <div class="card-body " style="background-color: steelblue; padding: 15%;">
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card bg-success rounded">
+                    <img src="project3/featur-3.jpg" class="card-img-top" alt="Product 2">
+                    <div class="discount bg-warning " style="text-align: center; top: 60%;left: 25%;padding: 5%;">
+                        <h5 class="text-white">Fresh Apples</h5>
+                        <h3 class="text-muted">20% OFF</h3>
+                    </div>
+
+                    <div class="card-body text-center bg-success" style="padding: 15%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div> 
+    <br>
+    <h1 class="text-muted" style="padding: 10%;">Fresh Organic Vegetables</h1>
+    <div class="container border-success">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card border-success">
+                    <div class="p" style="float: right;">Vegetables</div>
+                    <img src="project3/vegetable-item-1.jpg" class="card-img-top img-hover" alt="Grapes">
+                    <div class="card-body text-left">
+                        <h4 class="card-title text-muted">Banana</h4>
+                        <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                            eiusmod te incididunt.</p>
+                        <div class="d-flex text-center" style="margin: 5%; padding: 5%;">
+                            <span>
+                                <h5 class="text-muted">$4.99 / kg</h5>
+                                <a href="" class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                    <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to Cart</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-success">
+                    <div class="p">Vegetables</div>
+                    <img src="project3/vegetable-item-2.jpg" height="10%" class="card-img-top img-hover" alt="Product 2" style="height: 207px;">
+                    <div class="card-body text-muted">
+                        <h4 class="card-title">Bell Papper</h4>
+                        <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                            eiusmod te incididunt.</p>
+                        <div class="d-flex text-center" style="margin: 5%; padding: 5%;">
+                            <span>
+                                <h5 class="text-muted">$4.99 / kg</h5>
+                                <a href="" class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                    <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to Cart</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-success">
+                    <div class="p">Vegetables</div>
+                    <img src="project3/vegetable-item-3.png" class="card-img-top img-hover" alt="Product 3">
+                    <div class="card-body">
+                        <h4 class="card-title text-muted">Potatos</h4>
+                        <p style="font-size: 110%;">Lorem ipsum dolor sit amet, consectetur 
+                            eiusmod te incididunt.</p>
+                        <div class="d-flex text-center" style="margin: 5%; padding: 5%;">
+                            <span>
+                                <h5 class="text-muted">$4.99 / kg</h5>
+                                <a href="" class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                    <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to Cart</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md-3">
+                <div class="card border-success ">
+                    <div class="p">Vegetables</div>
+                    <img src="project3/vegetable-item-4.jpg" class="card-img-top img-hover" alt="Product 4">
+                    <div class="card-body">
+                        <h4 class="card-title text-muted">Parsely</h4>
+                        <p style="font-size: 110%;">Lorem ipsum dolor sit amet consectetur 
+                            eiusmod te incididunt</p>
+                        <div class="d-flex text-center" style="margin: 5%; padding: 5%;">
+                            <span>
+                                <h5 class="text-muted">$4.99 / kg</h5>
+                                <a href="" class="btn border-warning rounded-pill text-success ml-2 add-to-cart-btn ">
+                                    <img src="project3/icons8-bag-30.png" alt="" width="20%" height="20%" style="margin-bottom: 10px;">Add to Cart</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+     <br>
+    <div class="container-fluid banner my-5" style="background-color:rgb(255, 191, 16);">
+        <div class="container py-5">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6">
+                    <div class="py-4">
+                        <h1 class="display-3 text-white" style="font-weight: 500;">Fresh Exotic Fruits</h1>
+                        <p class="fw-normal display-3 text-dark mb-4">in Our Store</p>
+                        <p class="mb-4 text-dark">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
+                        <a href="#" class="banner-btn btn border-2 border-white rounded-pill text-dark py-3 px-5">BUY</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="position-relative">
+                        <img src="project3/baner-1.png" class="img-fluid w-100 rounded" alt="">
+                        <div class="d-flex align-items-center justify-content-center  bg-white rounded-circle position-absolute" style="width: 140px; height: 140px; top: 0; left: 0;">
+                            <h1 style="font-size: 85px;">1</h1>
+                            <div class="d-flex flex-column">
+                                <span class="h2 mb-0">50$</span>
+                                <span class="h4 text-muted mb-0">kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <center>
+        <p style="font-size:400%" class="text-muted">Bestseller Products</p>
+        <p class="text-dark muted">Latin words, combined with a handful of model sentence structures, to generate Lorem
+            <br>
+            Ipsum which looks reasonable.
+        </p>
+    </center><br>
+    <div class="container">
+        <div class="row">
+            <!-- Row 1, Item 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-1.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                             
+                            </div>
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!-- Row 1, Item 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-2.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                            </div>
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!-- Row 1, Item 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-3.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                            </div>
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+
+        <div class="row">
+            <!-- Row 2, Item 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-4.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                            </div>
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!-- Row 2, Item 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-5.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2"><img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                            </div>
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            <!-- Row 2, Item 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="col-4">
+                            <img src="project3/fruite-item-6.jpg" class="img-fluid rounded-circle" alt="Organic Tomato">
+                        </div>
+                        <div class="col-8">
+                            <p class="h3 text-muted mb-1">Organic Tomato</p>
+                            <div class="mb-2"><img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                            <h5 class="text-muted mb-2">$4.99 / kg</h5>
+                            <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+                                <img src="project3/icons8-bag-30.png" alt="Lock" width="20%" height="20%" style="margin-bottom: 10px;"> Add to Cart
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ <br>
+ <div class="row p-3">
+    <div class="col-12 col-sm-6 col-md-3 text-center mb-4">
+        <img src="project3/fruite-item-1.jpg" class="img-fluid" alt="Fruit 1">
+        <p class="h5 text-muted mb-1">Organic Tomato</p>
+        <div class="mb-2">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%">
+        </div>
+        <h5 class="text-muted mb-2">$4.99 / kg</h5>
+        <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+            <img src="project3/icons8-bag-30.png" alt="Bag" width="20%" style="margin-bottom: 10px;"> Add to Cart
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 text-center mb-4">
+        <img src="project3/fruite-item-2.jpg" class="img-fluid" alt="Fruit 2">
+        <p class="h5 text-muted mb-1 product-title">Organic Tomato</p>
+        <div class="mb-2">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+        </div>
+        <h5 class="text-muted mb-2">$4.99 / kg</h5>
+        <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+            <img src="project3/icons8-bag-30.png" alt="Bag" width="20%" style="margin-bottom: 10px;"> Add to Cart
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 text-center mb-4">
+        <img src="project3/fruite-item-4.jpg" class="img-fluid" alt="Fruit 3">
+        <p class="h5 text-muted mb-1 product-title">Organic Tomato</p>
+        <div class="mb-2">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%">
+        </div>
+        <h5 class="text-muted mb-2">$4.99 / kg</h5>
+        <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+            <img src="project3/icons8-bag-30.png" alt="Bag" width="20%" style="margin-bottom: 10px;"> Add to Cart
+        </a>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-3 text-center mb-4">
+        <img src="project3/fruite-item-6.jpg" class="img-fluid" alt="Fruit 4">
+        <p class="h5 text-muted mb-1 product-title">Organic Tomato</p>
+        <div class="mb-2">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%">
+            <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%">
+        </div>
+        <h5 class="text-muted mb-2">$4.99 / kg</h5>
+        <a href="#" class="btn border-warning rounded-pill text-success add-to-cart-btn">
+            <img src="project3/icons8-bag-30.png" alt="Bag" width="20%" style="margin-bottom: 10px;"> Add to Cart
+        </a>
+    </div>
+</div>
+
+
+   
+    
+    <!--  -->
+    <div class="container border-2 bg-light">
+        <div class="row text-center" style="padding: 0; margin: 5%;">
+            <div class="col-12 col-md-3 border-2 bg-white mb-4">
+                <img src="project3/mangement.png" class="img-fluid" alt="" style="max-width: 40%; height: auto;">
+                <br>
+                <b style="font-size: 160%;" class="text-success">SATISFIED<br>CUSTOMERS</b><br>
+                <b class="text-muted" style="font-size: 155%;">1963</b>
+            </div>
+            <div class="col-12 col-md-3 border-2 bg-white mb-4">
+                <img src="project3/mangement.png" class="img-fluid" alt="" style="max-width: 40%; height: auto;">
+                <br>
+                <b style="font-size: 160%;" class="text-success">QUALITY OF <br>SERVICE</b><br>
+                <b class="text-muted" style="font-size: 155%;">99%</b>
+            </div>
+            <div class="col-12 col-md-3 border-2 bg-white mb-4">
+                <img src="project3/mangement.png" class="img-fluid" alt="" style="max-width: 40%; height: auto;">
+                <br>
+                <b style="font-size: 160%;" class="text-success">QUALITY <br>CERTIFICATES</b><br>
+                <b class="text-muted" style="font-size: 155%;">33</b>
+            </div>
+            <div class="col-12 col-md-3 border-2 bg-white mb-4">
+                <img src="project3/mangement.png" class="img-fluid" alt="" style="max-width: 40%; height: auto;">
+                <br>
+                <b style="font-size: 160%;" class="text-success">AVAILABLE <br>PRODUCTS</b><br>
+                <b class="text-muted" style="font-size: 155%;">789</b>
+            </div>
+        </div>
+    </div>
+    
+    <!--  -->
+    <center>
+        <h3 class="text-success">Our Testimonial</h3>
+        <h1 class="text-muted">Our Client Saying!</h1>
+    </center>
+    <div class="container bg-muted">
+        <div class="row">
+            <div class="col-md-6 mb-6">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                            <p>Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry standard
+                                dummy text ever since the 1500s</p>
+                            <hr class="border-warning">
+                            <div class="d-flex align-items-center">
+                                <img src="project3/testimonial-1.jpg" class="img-fluid rounded-circle me-3" alt=""
+                                    width="80">
+                                <div>
+                                    <p class="h3 text-muted mb-1">Client Name</p>
+                                    <p class="text-muted mb-1">Profession</p>
+                                    <div class="mb-2">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-6">
+                <div class="p-4 rounded bg-light">
+                    <div class="row align-items-center g-4">
+                        <div class="testimonial-item img-border-radius bg-light rounded p-4">
+                            <p>Lorem Ipsum is simply dummy text of the printing Ipsum has been the industry standard
+                                dummy text ever since the 1500s</p>
+                            <hr class="border-warning">
+                            <div class="d-flex align-items-center">
+                                <img src="project3/testimonial-1.jpg" class="img-fluid rounded-circle me-3"
+                                    alt="Client Image" width="80">
+                                <div>
+                                    <p class="h3 text-muted mb-1">Client Name</p>
+                                    <p class="text-muted mb-1">Profession</p>
+                                    <div class="mb-2">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-30 (1).png" alt="Star" width="7%" height="7%">
+                                        <img src="project3/icons8-star-half-empty-30 (1).png" alt="Star" width="7%" height="7%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <br>
+    <div class="container-fluid text-white-50 footer pt-5 mt-5" style="background-color:#405044; padding: 20px;">
+        <div class="container py-5">
+            <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(240, 196, 66, 0.5);">
+                <div class="row g-3">
+                    <div class="col-lg-3">
+                        <h1 class="text-success mb-0">Fruitables</h1>
+                        <p class="text-warning mb-0">Fresh products</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-success w-100 py-3 px-4 rounded-pill" type="email" placeholder="Your Email">
+                            <button type="submit" class="btn btn-success border-success py-3 px-4 position-absolute rounded-pill text-white" style="top: 0; right: 0;">Subscribe Now</button>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-lg-end">
+                        <a class="btn btn-outline-warning me-1 btn-md-square rounded-circle" href="#">
+                            <img src="project3/icons8-facebook-50.png" alt="Twitter" width="40px">
+                        </a>
+                        <a class="btn btn-outline-warning me-1 btn-md-square rounded-circle" href="#">
+                            <img src="project3/icons8-youtube-50.png" alt="Facebook">
+                        </a>
+                        <a class="btn btn-outline-warning me-1 btn-md-square rounded-circle" href="#">
+                            <img src="project3/icons8-twitter-50.png" alt="Instagram">
+                        </a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-section row text-white">
+            <div class="col-lg-3 mb-4">
+                 <h3>Why People Like Us!</h3>
+                <p class="mb-0" style="margin: 2%;">Typesetting, remaining essentially unchanged. It was popularised in the 1960s with the like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="col-lg-2 mb-4">
+                <h3>Shop Info</h3>
+                <ul class="list-unstyled">
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Condition</li>
+                    <li>Return Policy</li>
+                    <li>FAQs & Help</li>
+                </ul>
+            </div>
+            <div class="col-lg-2 mb-4">
+                <h3>Account</h3>
+                <ul class="list-unstyled">
+                    <li>My Account</li>
+                    <li>Shop Details</li>               
+                    <li>Shopping Cart</li>
+                    <li>Wishlist</li>
+                    <li>Order History</li>
+                    <li>International Orders</li>
+                </ul>
+            </div>
+            <div class="col-lg-3 mb-4">
+                <h3>Contact</h3>
+                <ul class="list-unstyled">
+                    <li>Address: 1429 Netus Rd, NY 48247</li>
+                    <li>Email: Example@gmail.com</li>
+                    <li>Phone: +0123 4567 8910</li>
+                </ul>
+                <h5>Payment Accepted</h5>
+                <img src="project3/payment.png" alt="Payment Methods">
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
